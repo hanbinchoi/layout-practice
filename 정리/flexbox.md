@@ -38,6 +38,10 @@ flexbox는 이처럼 컨테이너를 만들어 element를 컨테이너 안에 �
 
 flex의 자식의 자식들은 flex의 규칙에서 벗어난다.
 
+---
+
+## flex-direction
+
 flex에는 row와 column으로 컨테이너가 구성되어 있다.
 
 flex-direction은 기본값이 row이다.
@@ -51,6 +55,8 @@ cross axis는 세로축이 된다.
 row-reverse, column-reverse 처럼 거꾸로 element를 배치하는것도 존재한다.
 
 ---
+
+## justify-content
 
 justify-content는 main axis 방향으로 element를 옮긴다.
 
@@ -69,6 +75,8 @@ justify-content: center;
 
 ---
 
+## align-item
+
 align-item은 element를 cross axis로 옮긴다.
 
 center는 flexbox의 컨테이너 높이를 기준으로 가운데로 element를 옮긴다.
@@ -81,6 +89,8 @@ center는 flexbox의 컨테이너 높이를 기준으로 가운데로 element를
 
 ---
 
+## align-self
+
 align-self는 align-item과 비슷하게 행동하지만 해당 자식만 유일하게 속성을 주는것이다.
 
 해당 자식만 cross axis로 위치를 옮길 수 있다.
@@ -91,6 +101,8 @@ align-self는 align-item과 비슷하게 행동하지만 해당 자식만 유일
 
 ---
 
+## order
+
 또다른 자식에게 줄 수 있는 속성은 order이다.
 
 order:1; 로 속성을 주면 해당 자식은 부모 컨테이너의 두번째의 인덱스를 가진다.
@@ -100,6 +112,8 @@ box의 order는 0부터 시작한다.
 하나의 박스만 order를 주면 나머지 박스는 기본적으로 0으로 설정되어 있으므로 맨 끝으로 이동한다.
 
 ---
+
+## wrap
 
 flexbox는 모든 element가 같은 라인(main axis)에 있도록 위치시킨다.
 
@@ -115,6 +129,8 @@ wrap-reverse는 여러라인을 만드는데 element들이 반대순서로 배�
 
 ---
 
+## align-content
+
 align-content는 line을 수정할때 라인의 간격이 벌어지게 되는데 그것을 조정하는 속성이다.
 
 align-content: flex-start; 는 라인시작의 간격을 없앤다.
@@ -129,11 +145,15 @@ align-content는 line을 정의하는 것이다.
 
 ---
 
+## flex-shrink
+
 flex-shrink는 기본적으로 element의 행동을 정의한다.
 
 1이 기본값이다.
 
 만약 값을 2로 변경하면 윈도우 크기가 줄어들때 shrink를 2로 준 element만 2배로 줄어든다.
+
+## flex-grow
 
 flex-grow는 shrink와 반대로 동작한다.
 
@@ -148,6 +168,8 @@ flex-grow의 기본값은 0이다.
 > 이러한 속성들은 반응형 디자인에 유용하다
 
 ---
+
+## flex-basis
 
 flex-basis는 element에게 초기 크기를 주는것이다.
 

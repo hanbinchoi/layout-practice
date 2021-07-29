@@ -1,18 +1,12 @@
 body {
   display: flex;
+  flex-wrap: wrap-reverse;
   justify-content: space-around;
-  align-items: center;
-  height: 90vh;
+  align-content: space-around;
+  height: 100vh;
 }
 
 .children {
   background-color: beige;
   width: 100px;
-  height: 100px;
-}
-.children:nth-child(2) {
-  order: 101;
-}
-.children:nth-child(1) {
-  order: 100;
 }
