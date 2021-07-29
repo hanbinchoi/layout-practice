@@ -101,10 +101,6 @@ box의 order는 0부터 시작한다.
 
 ---
 
-> child에게 줄 수 있는 속성은 align-self와 order가 유일하다.
-
----
-
 flexbox는 모든 element가 같은 라인(main axis)에 있도록 위치시킨다.
 
 따라서 자식들의 크기는 flexbox에 의해 자동으로 변경된다.
@@ -152,3 +148,17 @@ flex-grow의 기본값은 0이다.
 > 이러한 속성들은 반응형 디자인에 유용하다
 
 ---
+
+flex-basis는 element에게 초기 크기를 주는것이다.
+
+grow, shrink가 되기전 미리 크기를 설정한다.
+
+flex-basis는 main-axis에서 적용된다.
+
+그러므로 direction이 row인 flexbox의 flex-basis는 width와 같다.
+
+direction이 column일때는 height와 같다.
+
+```csss
+flex-basis: 30%;
+```
