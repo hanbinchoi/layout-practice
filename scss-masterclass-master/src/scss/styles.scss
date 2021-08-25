@@ -1,4 +1,3 @@
-@import "reset.css";
 @import "_variables";
 
 * {
@@ -6,130 +5,71 @@
 }
 
 body {
-  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: $white;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: $white;
-  width: $fixedWidth;
-  height: 100%;
-  padding: 7vh 100px 10px 72px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: $l_font;
-  h1 {
-    font-size: 50px;
-    text-transform: uppercase;
-    letter-spacing: 10px;
-  }
-
-  h3 {
-    font-size: 35px;
-    font-weight: 400;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-  p {
-    font-weight: 100;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  nav {
-    p {
-      font-size: 30px;
-      color: black;
-      margin-bottom: 20px;
-    }
-    ul {
-      display: flex;
-      align-content: space-around;
-      flex-wrap: wrap;
-      li {
-        margin-left: 12px;
-        font-size: 20px;
-        color: black;
-        opacity: 0.5;
-        padding-bottom: 5px;
-        border-bottom: 2px solid rgba(0, 0, 0, 1);
-
-        &:hover {
-          opacity: 1;
-        }
-      }
-    }
-  }
-  .contact {
-    color: $l_font;
-    line-height: 30px;
-    font-size: 15px;
-    text-align: center;
-    a {
-      text-decoration: none;
-      color: $l_font;
-      opacity: 0.5;
-      &:visited {
-        text-decoration: none;
-        opacity: 0.5;
-      }
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
-}
-
-main {
-  margin-left: $fixedWidth;
-  .movie {
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.2) 1%,
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0)
-      ),
-      $bg;
-    height: 100vh;
+  height: 100vh;
+  background-color: $bg;
+  display: grid;
+  grid-template-columns: 1.5fr 1.9fr 1.5fr;
+  grid-template-rows: 1fr 5fr 1fr;
+  gap: 1px;
+  & > * {
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $r_font;
-    .wrapper {
-      width: 90%;
+    color: $bg;
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+  .menu {
+    grid-column-start: -2;
+  }
+  .center-image {
+    grid-column: 2 / -2;
+    grid-row: 2/ -2;
+    background-image: url("https://dimg.donga.com/wps/NEWS/IMAGE/2021/08/21/108645978.2.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .number_row {
+    background-color: $bg;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    height: 100%;
+    align-items: stretch;
+    .number {
       display: flex;
       justify-content: center;
-      .movie_header {
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        h4 {
-          font-size: 40px;
-          text-transform: uppercase;
-          margin-bottom: 20px;
-        }
-        h5 {
-          font-size: 5px;
-          margin-left: 5px;
-          letter-spacing: 2px;
-        }
-      }
-      .img_box {
-        display: flex;
-        width: auto;
-        align-items: center;
-        justify-content: center;
-        img {
-          width: 60%;
-        }
+      align-items: center;
+      background-color: white;
+      cursor: pointer;
+      transition: color 0.3s linear, background-color 0.3s linear;
+      &:hover {
+        background-color: $bg;
+        color: white;
       }
     }
+  }
+  .scrolling_text {
+    grid-column-start: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    span {
+      animation: scrollText 3s linear infinite forwards;
+    }
+  }
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(-100px);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(-100px);
   }
 }
